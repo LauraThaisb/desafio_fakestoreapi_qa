@@ -1,4 +1,4 @@
-# Automação de Testes de Serviço com REST Assured
+# Automação de Testes de Serviço com REST Assured: FakeStoreAPI
 
 As ferramentas utilizadas são:
 
@@ -14,7 +14,6 @@ Os testes foram separados em suites, para uma melhor divisão que poderá ser us
 	• All suites
 	• Contract
 	• Functional
-	• Negative
 	• Healt check
 
 Execução das Suites:
@@ -22,13 +21,12 @@ Execução das Suites:
 	• All suites: mvn test
 	• Contract: mvn test -Dgroups="contract"
 	• Functional: mvn test -Dgroups="functional"
-	• Negative: mvn test -Dgroups="negative"
 	• Healt check: mvn test -Dgroups="health_check"
 
 --------------------------------------------------
 Observações:
 
 	• Os dados estão sendo informados via código e não buscados,
-    a estrutura deve ter acesso a base de dados para realizar os testes corretamente
-	• Não está sendo realizada a verificação da validade dos dados de simulação,
-    deve existir essa verificação para preservar a integridade das informações
+    a estrutura deve ter acesso a uma base de dados para realizar validações complexas.
+    
+	
