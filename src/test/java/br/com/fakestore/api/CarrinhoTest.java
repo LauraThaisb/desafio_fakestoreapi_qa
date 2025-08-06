@@ -73,26 +73,7 @@ public class CarrinhoTest extends BaseTest {
     }
 
     @Test(groups = { "functional" })
-    public void consultarCarrinho() {
-
-        Response retornoCriacao = given().
-                contentType(ContentType.JSON).
-                body(carrinho).
-                when().
-                post("/carts").
-                then().
-                statusCode(HttpStatus.SC_CREATED).
-                extract().
-                response();
-
-        Integer carrinhoId = retornoCriacao.jsonPath().getInt("id");
-        List<Integer> produtosIDs = retornoCriacao.jsonPath().getList("products.productId");
-        List<Integer> quantidades = retornoCriacao.jsonPath().getList("products.quantity");
-
-        assertThat(carrinhoId, notNullValue());
-        assertThat(produtosIDs, containsInAnyOrder(19, 20));
-        assertThat(quantidades, containsInAnyOrder(2, 1));
-        assertThat(retornoCriacao.jsonPath().getString("date"), equalTo("2025-06-03"));
+    public void consultarCarrinho(int carrinhoId) {
 
         Response retornoConsulta = given().
                 contentType(ContentType.JSON).
@@ -103,14 +84,33 @@ public class CarrinhoTest extends BaseTest {
                 extract().
                 response();
 
-        System.out.println(retornoConsulta.toString());
-        //List<Integer> consultaIds = retornoConsulta.jsonPath().getInt("id");
-        //assertThat(consultaIds, containsInAnyOrder(21, 22));
+        Integer carrinhoConsultaId = retornoConsulta.jsonPath().getInt("id");
+        List<Integer> consultaProdutosID = retornoConsulta.jsonPath().getList("products.productId");
+        List<Integer> consultaQuantidades = retornoConsulta.jsonPath().getList("products.quantity");
 
-        /*List<Integer> consultaIds = retornoConsulta.jsonPath().getList("products.productId");
-        assertThat(consultaIds, containsInAnyOrder(21, 22));
-        List<Integer> quantidadesConsulta = retornoConsulta.jsonPath().getList("products.quantity");
-        assertThat(quantidadesConsulta, containsInAnyOrder(2, 1));*/
+        assertThat(carrinhoConsultaId, equalTo(carrinhoId));
+
+    }
+
+    /**
+     * O endpoint retorna os dados, mas não deleta as informações
+     * @param carrinhoId
+     * @return
+     */
+    @Test(groups = { "functional" })
+    public void removerCarrinho(int carrinhoId) {
+
+        Response retornoRemocao = given().
+                contentType(ContentType.JSON).
+                when().
+                delete("/carts/" + carrinhoId).
+                then().
+                statusCode(HttpStatus.SC_OK).
+                extract().
+                response();
+
+        System.out.println(retornoRemocao.jsonPath().getString("date"));
+
     }
 
 }
