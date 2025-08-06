@@ -9,7 +9,7 @@
         </groups>
 
         <packages>
-            <package name="br.com.sicredi.api.*"/>
+            <package name="br.com.fakestore.api.*"/>
         </packages>
     </test>
 

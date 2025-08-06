@@ -1,4 +1,4 @@
-package br.com.sicredi.configuration;
+package br.com.fakestore.configuration;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;

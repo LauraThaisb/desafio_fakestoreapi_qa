@@ -1,0 +1,58 @@
+{
+  "$schema" : "http://json-schema.org/draft-04/schema#" ,
+  "type" : "array" ,
+  "items" : [
+    {
+      "tipo" : "objeto" ,
+      "propriedades" : {
+        "id" : {
+          "tipo" : "inteiro"
+        },
+        "userId" : {
+          "tipo" : "inteiro"
+        },
+        "produtos" : {
+          "tipo" : "matriz" ,
+          "itens" : [
+            {
+              "tipo" : "objeto" ,
+              "propriedades" : {
+                "id" : {
+                  "tipo" : "inteiro"
+                },
+                "título" : {
+                  "tipo" : "string"
+                },
+                "preço" : {
+                  "tipo" : "número"
+                },
+                "descrição" : {
+                  "tipo" : "string"
+                },
+                "categoria" : {
+                  "tipo" : "string"
+                },
+                "imagem" : {
+                  "tipo" : "string"
+                }
+              },
+              "obrigatorio" : [
+                "id" ,
+                "título" ,
+                "preço" ,
+                "descrição" ,
+                "categoria" ,
+                "imagem"
+              ]
+            }
+          ]
+        }
+      },
+      "obrigatorio" : [
+        "id" ,
+        "userId" ,
+        "produtos"
+      ]
+    }
+  ]
+}

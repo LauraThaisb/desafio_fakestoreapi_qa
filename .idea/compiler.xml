@@ -6,7 +6,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="api_automation_sicredi" />
+        <module name="desafio_fakestoreapi_qa" />
       </profile>
     </annotationProcessing>
   </component>

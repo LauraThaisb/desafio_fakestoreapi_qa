@@ -1,4 +1,4 @@
-package br.com.sicredi.configuration;
+package br.com.fakestore.configuration;
 
 public class Configuration {
 

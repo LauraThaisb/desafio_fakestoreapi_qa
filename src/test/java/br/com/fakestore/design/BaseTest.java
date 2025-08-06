@@ -1,6 +1,6 @@
-package br.com.sicredi.design;
+package br.com.fakestore.design;
 
-import br.com.sicredi.configuration.Configuration;
+import br.com.fakestore.configuration.Configuration;
 import org.testng.annotations.BeforeClass;
 
 import static io.restassured.RestAssured.baseURI;

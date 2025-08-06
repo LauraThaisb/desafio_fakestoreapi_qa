@@ -1,0 +1,28 @@
+{
+  "$schema" : "http://json-schema.org/draft-04/schema#" ,
+  "tipo" : "objeto" ,
+  "propriedades" : {
+    "título" : {
+      "tipo" : "string"
+    },
+    "preço" : {
+      "tipo" : "número"
+    },
+    "descrição" : {
+      "tipo" : "string"
+    },
+    "imagem" : {
+      "tipo" : "string"
+    },
+    "categoria" : {
+      "tipo" : "string"
+    }
+  },
+  "obrigatorio" : [
+    "título" ,
+    "preço" ,
+    "descrição" ,
+    "imagem" ,
+    "categoria"
+  ]
+}
