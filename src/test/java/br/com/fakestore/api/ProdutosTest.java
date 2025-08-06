@@ -59,10 +59,6 @@ public class ProdutosTest extends BaseTest {
     @Test(groups = { "functional" })
     public void cadastrarProdutos() {
 
-        List<String> listaProdutos = new ArrayList<>();
-        listaProdutos.add(produto_1);
-        listaProdutos.add(produto_2);
-
         Response retorno_produto1 = given().
                 contentType(ContentType.JSON).
                 body(produto_1).
@@ -87,7 +83,6 @@ public class ProdutosTest extends BaseTest {
         Integer generatedId2 = retorno_produto2.jsonPath().getInt("id");
         assertThat(generatedId2, notNullValue());
 
-
     }
 
     @Test(groups = { "functional" })
@@ -102,7 +97,6 @@ public class ProdutosTest extends BaseTest {
                 asString();
 
         assertThat(listaProdutos, notNullValue());
-        System.out.println(listaProdutos.toString());
 
     }
 

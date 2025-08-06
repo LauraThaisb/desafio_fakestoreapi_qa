@@ -22,11 +22,11 @@ public class CarrinhoTest extends BaseTest {
             "  \"date\": \"2025-06-03\",\n" +
             "  \"products\": [\n" +
             "    {\n" +
-            "      \"productId\": 19,\n" +
+            "      \"productId\": 21,\n" +
             "      \"quantity\": 2\n" +
             "    },\n" +
             "    {\n" +
-            "      \"productId\": 20,\n" +
+            "      \"productId\": 22,\n" +
             "      \"quantity\": 1\n" +
             "    }\n" +
             "  ]\n" +
@@ -66,7 +66,7 @@ public class CarrinhoTest extends BaseTest {
         List<Integer> quantities = retorno_carrinho.jsonPath().getList("products.quantity");
 
         assertThat(carrinhoId, notNullValue());
-        assertThat(productIds, containsInAnyOrder(19, 20));
+        assertThat(productIds, containsInAnyOrder(21, 22));
         assertThat(quantities, containsInAnyOrder(2, 1));
         assertThat(retorno_carrinho.jsonPath().getString("date"), equalTo("2025-06-03"));
 
